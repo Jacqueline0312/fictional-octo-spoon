@@ -1,0 +1,167 @@
+body {
+    background-color: #f9eeb7cd;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns:1fr 720px 250px 1fr;
+    height: 100vh; /*Viewport-Höhe*/
+    grid-template-areas:
+        ". g-header g-header ."
+        ". g-nav g-nav ."
+        ". g-main g-aside ."
+        ". g-footer g-footer .";
+    
+
+
+
+}
+h1 {
+    color: #bb24c0;
+    font-family: 'Lucida Sans';
+}
+h2 {
+    color: #5d9164;
+}
+
+a:link {
+    color:#4caabf;
+    text-decoration:none;
+ }
+ a:visited {
+    color: #a6a6a6; 
+ }
+ table {
+    border: 4px double #305535;
+    color: #5d9164;
+ }
+img {
+    height: 125px;
+    width: 195px;
+    margin: 10px;
+}
+
+#strand1 {
+    float: left;
+    box-shadow: 8px 8px 10px #000000;
+}
+
+#lobby {
+    float: left;
+    border: 5px double #bb24c0; 
+}
+
+#meer {
+    float: left;
+    border-radius: 100%;
+}
+
+header {
+    border: 2px solid #779766;
+    border-radius: 20px; /*man kann jede ecke anders angeben(4 Werte), stellt den Grad der einzelnen abgerundeten Ecken dar*/
+    background-color: #e2f8ae; 
+    margin: 10px; /*stellt den Außenabstand zwischen Browerfenster und Box dar*/
+    padding: 5px;  /* Stellt den Innenabstand zwischen Text und Box dar*/
+    text-align: center; /* stellt den darin enthaltenen Text zentriert dar*/ 
+    grid-area: g-header;
+}
+nav {
+    border: 2px solid #fceb54;
+    border-radius: 7px;
+    background-color: #ffffff; 
+    margin: 10px;
+    padding: 5px;
+    grid-area: g-nav;
+}
+main {
+    border: 2px solid #654b7e;
+    border-radius: 10px;
+    background-color: #ad9dc0; 
+    margin: 10px;
+    padding: 5px;
+    grid-area: g-main;
+}
+
+section {
+    border-radius: 7px;
+    background-color: #acb8ce; 
+    margin: 10px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 150px;
+}
+aside {
+    border: 2px solid #6c7285;
+    border-radius: 7px;
+    background-color: #acb8ce; 
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly; /*gleichmäßiger Abständ zwischen  den Kindelementen*/
+    flex-direction:column; /*Kinderlemente werden untereinander ausgerichtet*/
+    margin: 10px;
+    padding: 5px;
+    height: auto;
+    grid-area: g-aside;
+}
+
+footer {
+    border: 2px solid #364b8f;
+    border-radius: 20px;
+    background-color: #bacef5; 
+    margin: 10px 0px 10px 0px;
+    padding: 0px 0px 0px 10px;
+    grid-area: g-footer;
+}
+
+#Inhalt {
+    width: 100%; 
+    height: 100%;
+    border: none; 
+}
+
+#Hintergrund {
+    background-color:#ad9dc0 ;
+    display:contents; /*Inhalt passt sich wieder der Main-Box an*/
+}
+
+/*Flexbox Formatierung für nav*/
+nav>ul {
+    list-style-type: none; /* Aufzählungspunkte ausblenden */
+    display: flex; /* Flexbox-Container */
+}
+
+nav a {
+    background-color: #dbd3bd87; 
+    text-decoration: none; /* keine Unterstreichung */
+    padding: 10px; /* Abstand im den Link */
+}
+      
+nav a:hover {
+    background-color: #6ab77455;
+}
+
+ /*Mobile-Last-Ansicht*/
+ @media screen and (max-width: 960px) {
+    body {
+      grid-template-columns:75% 25%;
+     grid-template-areas: 
+      "g-header g-header"
+      "g-nav g-nav"
+      "g-main g-aside"
+      "g-footer g-footer";
+}
+  }
+
+  /*Mobile-Last-Ansicht*/
+  @media screen and (max-width: 500px) {
+    body {
+      grid-template-columns:100%;
+      grid-template-areas:
+      "g-header"
+      "g-nav"
+      "g-main" 
+      "g-aside"
+      "g-footer";
+    }
+    main {
+        height: 500px;
+    }
+  }
+
